@@ -2,7 +2,7 @@ class CreateSentences < ActiveRecord::Migration
   def change
     create_table :sentences do |t|
       t.string :content
-      t.string :user_id
+      t.integer :user_id
     end
   end
 end
