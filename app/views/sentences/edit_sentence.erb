@@ -1,0 +1,18 @@
+<br>
+<% if logged_in? %>
+<p>Welcome, <%=current_user.username%>
+<a href="/sentences/new">Add to the story</a>
+<a href="/logout">Log Out</a>
+<a href="/sentences">Show Story</a>
+<% else %>
+<a href="/signup">Sign Up</a>
+<a href="/login">Login</a>
+<% end %>
+
+<h1>Edit Sentence</h1>
+<form action="/sentences/<%=@sentence.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="PATCH">
+
+<input type="text" id="content" name="content" value="<%= @sentence.content %>">
+<input type="submit" value="submit">
+</form>

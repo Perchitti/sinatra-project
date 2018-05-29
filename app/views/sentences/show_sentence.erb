@@ -1,0 +1,20 @@
+<h3>Here is your addition to the story, <%=current_user.username%>.</h3>
+<div class="sentence-content">
+  <p><%= @sentence.content %></p>
+</div>
+
+
+<div>
+  <p>
+    <a href="/sentences/<%= @sentence.id %>/edit">Edit Sentence</a>
+    <form method="post" action="/sentences/<%= @sentence.id %>/delete">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Sentence">
+    </form>
+  </p>
+</div>
+
+
+<div>
+  <p><a href="/sentences">Back to the story</a></p>
+</div>

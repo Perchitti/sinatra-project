@@ -1,0 +1,15 @@
+<br>
+<% if logged_in? %>
+<p>Welcome, <%=current_user.username%>
+<a href="/sentences/new">Add to the story</a>
+<a href="/logout">Log Out</a>
+<% else %>
+<a href="/signup">Sign Up</a>
+<a href="/login">Login</a>
+<% end %>
+
+<br>
+
+<% Sentence.all.each do |t|%>
+  <p><%= t.content %></p>
+<% end %>
